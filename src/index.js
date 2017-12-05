@@ -24,7 +24,9 @@ var state={
 
 }
 
-ReactDOM.render(<App first_name={state.first_name} last_name={state.last_name} position={state.position} img={st} width={state.avatar.width} height={state.avatar.height}   bio={state.bio} age={state.age} />, root)
+ReactDOM.render(<App first_name={state.first_name} last_name={state.last_name} 
+    position={state.position} img={st} width={state.avatar.width} height={state.avatar.height}  
+    bio={state.bio} age={state.age} />, root)
 registerServiceWorker();
 
 
