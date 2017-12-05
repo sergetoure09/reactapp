@@ -1,49 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import st from './st.jpg'
+
 import './index.css';
 import App from './App';
 
 import registerServiceWorker from './registerServiceWorker';
 
-var main=document.querySelector('#main')
-var root=document.getElementById('root')
-var content=document.getElementById('content')
+var root=document.querySelector('#root')
+var state={
+    first_name:"Serge Aboubacar",
+    last_name:"Toure",
+    age:32,
+    position:"Senior project manager",
+    avatar:{
+        img:{st},
+        width:"200px",
+        height:"200px"
+    },
+
+    bio:"A result oriented professional with 8+ years of experience in information system with a focus on gathering business, IT and project management skills.With strong technical background in Information Technology, i have got tangible knowledge, interpersonal skills and experience to walk through complexity of your business and add value while transforming and managing risk to your information system. A talented, self-driven, motivated and confident engineer looking for real challenge in a leading international organization"
 
 
+}
 
-ReactDOM.render(<App />, root)
+ReactDOM.render(<App first_name={state.first_name} last_name={state.last_name} position={state.position} img={st} width={state.avatar.width} height={state.avatar.height}   bio={state.bio} age={state.age} />, root)
 registerServiceWorker();
 
-const serguey={
-    firstname:'Serge',
-    lastname:'Toure'
-}
-
-function formatName(user){
-    return user.lastname+' '+user.firstname
-}
-
-const element=(<h1>
-    This guy is awesome and his name is {formatName(serguey)}
-    </h1>);  
-
-
-ReactDOM.render(element,main);
-
-function tick() {
-    const element = (
-      <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {new Date().toLocaleTimeString()}.</h2>
-      </div>
-    );
-    ReactDOM.render(
-      element,
-      content
-    );
-  }
-  
-  setInterval(tick, 5000);
 
 
 document.title='serge'
