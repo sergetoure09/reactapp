@@ -16,8 +16,6 @@ var root=document.querySelector('#root')
 ReactDOM.render(<App />, root)
 registerServiceWorker();
 
-
-
 document.title='AppToure'
 
 
