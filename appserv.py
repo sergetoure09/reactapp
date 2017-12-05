@@ -1,5 +1,6 @@
 from flask import Flask,render_template
 import json
+import os
 
 
 app=Flask(__name__,static_folder="./build/static",template_folder="./build")
@@ -23,8 +24,9 @@ state={
 
 @app.route("/")
 def index():
-    return json.dumps(state)
+    return render_template('index.html',state=json.dumps(state))
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug=True,host=os.getenv('IP', '0.0.0.0'),port=int(os.getenv('PORT', 8080)))
+
     

@@ -35,7 +35,7 @@ class App extends Component {
       age:state.age
     })
   }
-  componentWillMount(){
+  componentDidMount(){
     var url="/"
     fetch(url).then(function(response){
         return response.json();
