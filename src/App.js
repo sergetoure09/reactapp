@@ -35,6 +35,17 @@ class App extends Component {
       age:state.age
     })
   }
+  componentDidMount(){
+    var url="{{url_for('index')}}"
+    fetch(url).then((response)=>{
+        return response.json()
+    }).then((data)=>{
+      this.update(data)
+    }).catch((error) => {
+        console.error(error);
+      });
+    
+  }
   render(){
     return (
       <div>
